@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Libros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b38989;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .notes {
+            margin-top: 5px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Libros</h1>
+        <ul id="bookList">
+            <!-- Aquí se insertarán los libros dinámicamente -->
+        </ul>
+    </div>
+
+    <script>
+        // Datos de los libros
+        var books = [
+            { title: 'The Busy Executive\'s Database Guide', notes: 'An overview of available database systems with emphasis on common business applications. Illustrated.' },
+            { title: 'Cooking with Computers: Surreptitious Balance Sheets', notes: 'Helpful hints on how to use your electronic resources to the best advantage.' },
+            { title: 'You Can Combat Computer Stress!', notes: 'The latest medical and psychological techniques for living with the electronic office. Easy-to-understand explanations.' },
+            { title: 'Straight Talk About Computers', notes: 'Annotated analysis of what computers can do for you: a no-hype guide for the critical user.' },
+            { title: 'Silicon Valley Gastronomic Treats', notes: 'Favorite recipes for quick, easy, and elegant meals, tried and tested by people who never have time to eat, let alone cook.' },
+            { title: 'The Gourmet Microwave', notes: 'Traditional French gourmet recipes adapted for modern microwave cooking.' },
+            { title: 'The Psychology of Computer Cooking', notes: 'UNDECIDED' },
+            { title: "'But Is It User Friendly?', notes: 'A survey of software for the naive user, focusing on the ''friendliness'' of each.'" },
+            { title: "'Secrets of Silicon Valley', notes: 'Muckraking reporting by two courageous women on the world''s largest computer hardware and software manufacturers.'" },
+            { title: 'Net Etiquette', notes: 'A must-read for computer conferencing debutantes!' },
+            { title: 'Computer Phobic and Non-Phobic Individuals: Behavior Variati', notes: 'A must for the specialist, this book examines the difference between those who hate and fear computers and those who think they are swell.' },
+            { title: 'Is Anger the Enemy?', notes: 'Carefully researched study of the effects of strong emotions on the body. Metabolic charts included.' },
+            { title: 'Life Without Fear', notes: 'New exercise, meditation, and nutritional techniques that can reduce the shock of daily interactions. Popular audience. Sample menus included, exercise video available separately.' },
+            { title: 'Prolonged Data Deprivation: Four Case Studies', notes: 'What happens when the data runs dry? Searching evaluations of information-shortage effects on heavy users.' },
+            { title: 'Emotional Security: A New Algorithm', notes: 'Protecting yourself and your loved ones from undue emotional stress in the modern world. Use of computer and nutritional aids emphasized.' },
+            { title: 'Onions, Leeks, and Garlic: Cooking Secrets of the Mediterran', notes: 'Profusely illustrated in color, this makes a wonderful gift book for a cuisine-oriented friend.' },
+            { title: "'Fifty Years in Buckingham Palace Kitchens', notes: 'More anecdotes from the Queen''s favorite cook describing life among English royalty. Recipes, techniques, tender vignettes.'" },
+            { title: 'Sushi, Anyone?', notes: 'Detailed instructions on improving your position in life by learning how to make authentic Japanese sushi in your spare time. 5-10% increase in number of friends per recipe reported from beta test.' },
+            // Añadir más libros aquí...
+        ];
+
+        // Función para mostrar los libros en la lista
+        function displayBooks() {
+            var bookList = document.getElementById('bookList');
+            books.forEach(function(book) {
+                var li = document.createElement('li');
+                var title = document.createElement('div');
+                title.className = 'title';
+                title.textContent = book.title;
+                var notes = document.createElement('div');
+                notes.className = 'notes';
+                notes.textContent = book.notes;
+                li.appendChild(title);
+                li.appendChild(notes);
+                bookList.appendChild(li);
+            });
+        }
+
+        // Mostrar los libros al cargar la página
+        window.onload = function() {
+            displayBooks();
+        };
+    </script>
+
+<div class="container">
+    <h1>Lista de Libros</h1>
+    <ul id="book-list">
+        <!-- Aquí se mostrará la lista de libros -->
+    </ul>
+    <button onclick="window.location.href='autores.html'">Ver Autores</button>
+</div>
+</body>
+</html>

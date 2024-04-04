@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Autores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Lista de Autores y sus Libros</h1>
+    <ul id="authors-list">
+        <!-- Los datos de los autores y sus libros se cargarán aquí -->
+        <li><strong>Sheryl Sandberg</strong>: Lean In: Women, Work, and the Will to Lead</li>
+        <li><strong>Adam Grant</strong>: Option B: Facing Adversity, Building Resilience, and Finding Joy</li>
+        <li><strong>Malcolm Gladwell</strong>: Blink: The Power of Thinking Without Thinking, Outliers: The Story of Success</li>
+        <!-- Aquí puedes agregar más autores y sus libros -->
+    </ul>
+
+    <!-- Script para resaltar libros de un autor al pasar el mouse -->
+    <script>
+        const authorItems = document.querySelectorAll("#authors-list li");
+
+        authorItems.forEach(item => {
+            item.addEventListener("mouseenter", function() {
+                this.style.fontWeight = "bold";
+            });
+
+            item.addEventListener("mouseleave", function() {
+                this.style.fontWeight = "normal";
+            });
+        });
+    </script>
+</body>
+</html>
+
